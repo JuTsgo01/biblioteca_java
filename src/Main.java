@@ -4,8 +4,9 @@ public class Main {
         Livro livro1 = new Livro("Clean code", "Robert Cecil Martin", 2008);
 
         livro1.emprestarLivro();
-        livro1.emprestarLivro();
-        
+        livro1.exibirInformacoes();
+        livro1.devolverLivro();
+        livro1.exibirInformacoes();
     }
 
 }

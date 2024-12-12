@@ -5,15 +5,9 @@ public class Livro {
     private boolean emprestado;
 
     public Livro(String titulo, String autor, int anoPublicacao) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.anoPublicacao = anoPublicacao;
-    }
-
-    public Livro() {
-        this.titulo = "Desconhecido";
-        this.autor = "Desconhecido";
-        this.anoPublicacao = 0;
+        this.titulo = titulo !=null ? titulo : "Desconhecido";
+        this.autor = autor !=null ? autor : "Desconhecido";
+        this.anoPublicacao = anoPublicacao > 0 ? anoPublicacao : 0;
     }
 
     public String getTitulo() {
@@ -49,7 +43,7 @@ public class Livro {
     }
 
     
-    void emprestarLivro(){
+    public void emprestarLivro(){
         if(!this.isEmprestado()){
             setEmprestado(true);
             System.out.println("\nEmprestando livro: " + this.getTitulo()
@@ -61,7 +55,7 @@ public class Livro {
         }
     }
 
-    void devolverLivro(){
+    public void devolverLivro(){
         if(this.isEmprestado()){
             setEmprestado(false);
             System.out.println("\nDevolvendo livro: " + this.getTitulo()
@@ -73,7 +67,7 @@ public class Livro {
         }
     }
 
-    void exibirInformacoes(){
+    public void exibirInformacoes(){
         System.out.println("\nLivro: " + this.getTitulo() 
         + "\nAutor: " + this.getAutor()
         + "\nAno de publicação do livro: " + this.getAnoPublicacao() 

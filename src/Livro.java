@@ -1,7 +1,10 @@
 public class Livro {
-    public String titulo;
-    public String autor;
-    public int anoPublicacao;
+
+    /*Por que 'protected' e não private?
+    Porque quero que as classes filhas tenham acesso a esses atributos e se eu mantesse privados, elas não teriam acesso*/
+    private String titulo;
+    private String autor;
+    private int anoPublicacao;
     private boolean emprestado;
 
     public Livro(String titulo, String autor, int anoPublicacao) {
@@ -38,11 +41,10 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public void setEmprestado(boolean emprestado) {
+    private void setEmprestado(boolean emprestado) {
         this.emprestado = emprestado;
     }
 
-    
     public void emprestarLivro(){
         if(!this.isEmprestado()){
             setEmprestado(true);
@@ -63,7 +65,7 @@ public class Livro {
             + "\nAno de publicação do livro: " + this.getAnoPublicacao() 
             + "\nStatus: " + (this.isEmprestado() ? "Emprestado" : "Disponível"));
         } else{
-            System.out.println("Informe corretamente o livro que deseja devolver!");
+            System.out.println("Informe corretamente o livro que deseja devolver, pois este já se encontra disponível! O que você deseja é pega-lo emprestado?");
         }
     }
 

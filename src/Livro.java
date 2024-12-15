@@ -2,9 +2,9 @@ public class Livro {
 
     /*Por que 'protected' e não private?
     Porque quero que as classes filhas tenham acesso a esses atributos e se eu mantesse privados, elas não teriam acesso*/
-    private String titulo;
-    private String autor;
-    private int anoPublicacao;
+    protected  String titulo;
+    protected  String autor;
+    protected  int anoPublicacao;
     private boolean emprestado;
 
     public Livro(String titulo, String autor, int anoPublicacao) {
